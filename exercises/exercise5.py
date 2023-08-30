@@ -2,11 +2,10 @@
 
 
 def sumatoria_basico(n: int) -> int:
-    """Devuelve la suma de los números de 1 a N.
-
-    Restricción: Utilizar un bucle FOR.
-    """
-
+    suma = 0
+    for i in range(n+1):
+        suma += i
+    return suma
 
 # NO MODIFICAR - INICIO
 assert sumatoria_basico(1) == 1
@@ -18,11 +17,7 @@ assert sumatoria_basico(100) == 5050
 
 
 def sumatoria_sum(n: int) -> int:
-    """Re-Escribir utilizando la función sum.
-
-    Restricción: No utilizar bucles (FOR, WHILE, etc)
-    Referencia: https://docs.python.org/3/library/functions.html#sum
-    """
+    return sum(range(1, n+1))
 
 
 # NO MODIFICAR - INICIO
@@ -38,6 +33,12 @@ from typing import Iterable  # noqa: E402
 
 
 def multiplicar_basico(numeros: Iterable[float]) -> float:
+    if numeros:
+        multiplicacion = 1
+        for i in range(len(numeros)):
+            multiplicacion *= numeros[i]
+        return multiplicacion
+    return 0
     """Toma un lista de números y devuelve el producto todos los númereos. Si
     la lista está vacia debe devolver 0.
 
